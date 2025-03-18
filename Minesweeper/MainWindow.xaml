@@ -1,0 +1,36 @@
+﻿<Window x:Class="Minesweeper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Minesweeper"
+        mc:Ignorable="d"
+        Title="Minesweeper" Height="480" Width="370" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Grid.Row="0">
+            <TextBlock Text="Minesweeper" FontSize="24" FontWeight="Bold" Margin="10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10">
+                <TextBlock Text="Flags: " FontSize="14" VerticalAlignment="Center"/>
+                <TextBlock Name="FlagCounter" Text="10" FontSize="14" VerticalAlignment="Center"/>
+                <TextBlock Text="  |  " FontSize="14" VerticalAlignment="Center"/>
+                <TextBlock Text="Time: " FontSize="14" VerticalAlignment="Center"/>
+                <TextBlock Name="TimerCounter" Text="0" FontSize="14" VerticalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="10" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Width="100" Click="Restart_Click" Margin="10">Restart</Button>
+            <Button Width="100" Click="CustomSettings_Click" Margin="10">Custom Settings</Button>
+        </StackPanel>
+
+        <UniformGrid Name="Board" Grid.Row="2" Rows="10" Columns="10" Margin="10" >
+            <!-- Buttons -->
+        </UniformGrid>
+    </Grid>
+</Window>
